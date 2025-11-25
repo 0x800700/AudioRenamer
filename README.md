@@ -124,6 +124,3 @@ MIT License - see LICENSE file for details
 
 **Good enough is good enough by ProBably Works**
 
----
-
-*Developed by [ProBably Works](https://github.com/0x800700)*
