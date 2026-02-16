@@ -2,9 +2,9 @@
 
 ![AudioRenamer Screenshot](screenshot.png)
 
-**Smart audio file organization tool with AI-powered renaming capabilities.**
+**Smart audio file organization tool with AI-powered renaming and metadata matching.**
 
-AudioRenamer is a cross-platform desktop application that helps you organize and rename your audio files using multiple intelligent methods: template-based patterns, Bandcamp metadata matching, and AI-powered parsing.
+AudioRenamer is a cross-platform desktop application that helps you organize and rename your audio files using multiple intelligent methods: template-based patterns, Bandcamp/Beatport metadata matching, and AI-powered parsing.
 
 ## Features
 
@@ -14,12 +14,12 @@ Quickly rename files using predefined patterns that extract information from exi
 - `Track. Title` - Simple numbered format
 - Fast and reliable for consistently named files
 
-### 🎵 Bandcamp Match
-Automatically fetch track metadata from Bandcamp albums:
-- Paste any Bandcamp album URL
+### 🎵 Bandcamp / Beatport Match
+Automatically fetch track metadata from album pages:
+- Paste a Bandcamp or Beatport release URL
 - Intelligent matching between local files and album tracks
 - Visual confidence indicators for match quality
-- Perfect for organizing Bandcamp purchases
+- Great for organizing storefront downloads
 
 ### 🤖 AI Smart Parse
 Leverage Google's Gemini AI to intelligently parse messy filenames:
@@ -54,7 +54,7 @@ Build from source (see Development section below)
 
 ### Basic Workflow
 1. **Select Source**: Click "Browse Folder" and choose a folder containing audio files
-2. **Choose Method**: Select one of the three renaming methods
+2. **Choose Method**: Select one of the renaming methods
 3. **Review Changes**: Check the proposed filenames and edit if needed
 4. **Apply**: Click "Apply Rename" to rename all files
 
@@ -114,7 +114,7 @@ wails build -platform linux/amd64       # Linux
 - **Backend**: Go with Wails framework
 - **Frontend**: Svelte with TailwindCSS
 - **AI**: Google Gemini API
-- **Web Scraping**: Bandcamp metadata extraction
+- **Web Scraping**: Bandcamp & Beatport metadata extraction
 
 ## License
 
