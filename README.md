@@ -2,9 +2,9 @@
 
 ![AudioRenamer Screenshot](screenshot.png)
 
-**Smart audio file organization tool with AI-powered renaming capabilities.**
+**Smart audio file organization tool with AI-powered renaming and Bandcamp/Beatport metadata matching.**
 
-AudioRenamer is a cross-platform desktop application that helps you organize and rename your audio files using multiple intelligent methods: template-based patterns, Bandcamp metadata matching, and AI-powered parsing.
+AudioRenamer is a cross-platform desktop application that helps you organize and rename your audio files using multiple intelligent methods: template-based patterns, Bandcamp/Beatport metadata matching, and AI-powered parsing. It previews all proposed changes, lets you edit results, and only applies renames when you confirm.
 
 ## Features
 
@@ -12,14 +12,14 @@ AudioRenamer is a cross-platform desktop application that helps you organize and
 Quickly rename files using predefined patterns that extract information from existing filenames:
 - `Track. Artist - Title` - Standard format with track numbers
 - `Track. Title` - Simple numbered format
-- Fast and reliable for consistently named files
+- Best for consistently named files
 
-### 🎵 Bandcamp Match
-Automatically fetch track metadata from Bandcamp albums:
-- Paste any Bandcamp album URL
-- Intelligent matching between local files and album tracks
+### 🎵 Bandcamp / Beatport Match
+Automatically fetch track metadata from album pages:
+- Paste a Bandcamp or Beatport release URL
+- Match local files to album tracks with confidence scoring
 - Visual confidence indicators for match quality
-- Perfect for organizing Bandcamp purchases
+- Great for organizing storefront downloads
 
 ### 🤖 AI Smart Parse
 Leverage Google's Gemini AI to intelligently parse messy filenames:
@@ -28,12 +28,12 @@ Leverage Google's Gemini AI to intelligently parse messy filenames:
 - Works with any filename format
 - Requires a free Google AI API key ([get one here](https://aistudio.google.com/apikey))
 
-### ✏️ Manual Editing
-All proposed changes can be manually edited before applying:
-- Review all changes before renaming
+### ✏️ Manual Editing & Preview
+All proposed changes can be reviewed and edited before applying:
+- Preview every rename before it happens
 - Edit individual filenames as needed
 - Color-coded confidence indicators
-- Undo-friendly workflow
+- Safe, confirm-before-apply workflow
 
 ## Installation
 
@@ -54,7 +54,7 @@ Build from source (see Development section below)
 
 ### Basic Workflow
 1. **Select Source**: Click "Browse Folder" and choose a folder containing audio files
-2. **Choose Method**: Select one of the three renaming methods
+2. **Choose Method**: Select one of the renaming methods (template, Bandcamp/Beatport, or AI)
 3. **Review Changes**: Check the proposed filenames and edit if needed
 4. **Apply**: Click "Apply Rename" to rename all files
 
@@ -114,7 +114,7 @@ wails build -platform linux/amd64       # Linux
 - **Backend**: Go with Wails framework
 - **Frontend**: Svelte with TailwindCSS
 - **AI**: Google Gemini API
-- **Web Scraping**: Bandcamp metadata extraction
+- **Web Scraping**: Bandcamp & Beatport metadata extraction
 
 ## License
 
@@ -124,3 +124,6 @@ MIT License - see LICENSE file for details
 
 **Good enough is good enough by ProBably Works**
 
+---
+
+*Developed by [ProBably Works](https://github.com/0x800700)*
