@@ -1,23 +1,226 @@
 @import "tailwindcss";
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+:root {
+  --bg: #f7f4ef;
+  --bg-2: #efe9de;
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-strong: #fffaf3;
+  --ink: #1f1a14;
+  --muted: #6b6157;
+  --border: #e7dccf;
+  --accent: #0e8f90;
+  --accent-2: #f59e0b;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --warning: #d97706;
+  --shadow: 0 24px 60px rgba(25, 18, 12, 0.12);
+  --shadow-soft: 0 10px 24px rgba(25, 18, 12, 0.08);
+  --ring: 0 0 0 3px rgba(14, 143, 144, 0.2);
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  font-family: "Nunito", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 15% 10%, rgba(14, 143, 144, 0.12), transparent 60%),
+    radial-gradient(900px 520px at 85% 20%, rgba(245, 158, 11, 0.12), transparent 60%),
+    linear-gradient(160deg, var(--bg), var(--bg-2));
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-app {
+  background: transparent;
+}
+
+.bg-surface {
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.bg-surface-strong {
+  background: var(--surface-strong);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.text-ink {
+  color: var(--ink);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.bg-muted {
+  background: var(--muted);
+}
+
+.border-soft {
+  border-color: var(--border);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.8rem;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease,
+    color 150ms ease, border-color 150ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: #fff7ec;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  background: #0f0c0a;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #f8fffe;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-accent:hover {
+  background: #0b7d7e;
+}
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--ink);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(14, 143, 144, 0.35);
+  color: #0b6364;
+}
+
+.input {
+  width: 100%;
+  border-radius: 0.8rem;
+  border: 1px solid var(--border);
+  background: #fffdf8;
+  color: var(--ink);
+  padding: 0.6rem 0.9rem;
+  transition: box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgba(14, 143, 144, 0.6);
+  box-shadow: var(--ring);
+}
+
+.confidence-low {
+  background: rgba(220, 38, 38, 0.08);
+  color: #7f1d1d;
+  border-color: rgba(220, 38, 38, 0.25);
+}
+
+.confidence-mid {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.confidence-high {
+  background: rgba(22, 163, 74, 0.12);
+  color: #0f5132;
+  border-color: rgba(22, 163, 74, 0.3);
+}
+
+.chip {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.chip-success {
+  color: #0f5132;
+  background: rgba(22, 163, 74, 0.12);
+}
+
+.chip-warning {
+  color: #92400e;
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.chip-danger {
+  color: #7f1d1d;
+  background: rgba(220, 38, 38, 0.12);
+}
+
+.fade-in {
+  animation: fadeInUp 260ms ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::selection {
+  background: rgba(245, 158, 11, 0.35);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
 }
